@@ -1,4 +1,3 @@
-import express, {Request, Response, json} from "express";
 import app from "./app";
 
 const server = app;
