@@ -64,102 +64,6 @@ const data = [
       "defending": 32,
       "physical": 72
     }
-  },
-  {
-    "id": 5,
-    "name": "Phil Foden",
-    "club": "Manchester City",
-    "nationality": "English",
-    "position": "Midfielder",
-    "statistics": {
-      "overall": 90,
-      "pace": 84,
-      "shooting": 86,
-      "passing": 87,
-      "dribbling": 92,
-      "defending": 60,
-      "physical": 68
-    }
-  },
-  {
-    "id": 6,
-    "name": "Harry Kane",
-    "club": "Bayern Munich",
-    "nationality": "English",
-    "position": "Forward",
-    "statistics": {
-      "overall": 90,
-      "pace": 70,
-      "shooting": 95,
-      "passing": 86,
-      "dribbling": 83,
-      "defending": 49,
-      "physical": 84
-    }
-  },
-  {
-    "id": 7,
-    "name": "Jamal Musiala",
-    "club": "Bayern Munich",
-    "nationality": "German",
-    "position": "Midfielder",
-    "statistics": {
-      "overall": 89,
-      "pace": 85,
-      "shooting": 82,
-      "passing": 83,
-      "dribbling": 94,
-      "defending": 55,
-      "physical": 66
-    }
-  },
-  {
-    "id": 8,
-    "name": "Virgil van Dijk",
-    "club": "Liverpool",
-    "nationality": "Dutch",
-    "position": "Defender",
-    "statistics": {
-      "overall": 89,
-      "pace": 81,
-      "shooting": 60,
-      "passing": 71,
-      "dribbling": 70,
-      "defending": 91,
-      "physical": 86
-    }
-  },
-  {
-    "id": 9,
-    "name": "Rodri",
-    "club": "Manchester City",
-    "nationality": "Spanish",
-    "position": "Midfielder",
-    "statistics": {
-      "overall": 89,
-      "pace": 65,
-      "shooting": 78,
-      "passing": 86,
-      "dribbling": 82,
-      "defending": 85,
-      "physical": 84
-    }
-  },
-  {
-    "id": 10,
-    "name": "Lamine Yamal",
-    "club": "FC Barcelona",
-    "nationality": "Spanish",
-    "position": "Forward",
-    "statistics": {
-      "overall": 87,
-      "pace": 91,
-      "shooting": 80,
-      "passing": 82,
-      "dribbling": 93,
-      "defending": 45,
-      "physical": 65
-    }
   }
 ]
 export const findAllPlayers = async (): Promise<PlayerModel[]> => {
@@ -173,4 +77,25 @@ export const findPlayer = async (id: number): Promise<PlayerModel | undefined> =
 export const insertPlayer = async(player: PlayerModel) => {
   data.push(player);
   return null;
+}
+
+export  const deletePlayer = async(id: number): Promise<PlayerModel | null> => {
+  const index = data.findIndex(player => player.id === id);
+  
+  if(index !== -1){
+    const playerDeleted: PlayerModel  = data.splice(index, 1)[0];
+    return playerDeleted;
+  }
+
+  return null;
+}
+
+export const updatePlayer = async(id: number, player: any) => {
+  let index = data.findIndex(player => player.id === id);
+  if(index !== -1){
+    data[index] = player;
+    return player;
+  }else{
+    return null;
+  }
 }

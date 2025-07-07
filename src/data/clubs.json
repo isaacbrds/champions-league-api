@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Clube de Regatas do Flamengo",
+    "country": "Brasil",
+    "stadium": "Maracanã"
+  },
+  {
+    "id": 2,
+    "name": "Sociedade Esportiva Palmeiras",
+    "country": "Brasil",
+    "stadium": "Allianz Parque"
+  },
+  {
+    "id": 3,
+    "name": "Sport Club Corinthians Paulista",
+    "country": "Brasil",
+    "stadium": "Neo Química Arena"
+  },
+  {
+    "id": 4,
+    "name": "Real Madrid Club de Fútbol",
+    "country": "Espanha",
+    "stadium": "Santiago Bernabéu"
+  },
+  {
+    "id": 5,
+    "name": "Fútbol Club Barcelona",
+    "country": "Espanha",
+    "stadium": "Camp Nou"
+  },
+  {
+    "id": 6,
+    "name": "Manchester United Football Club",
+    "country": "Inglaterra",
+    "stadium": "Old Trafford"
+  },
+  {
+    "id": 7,
+    "name": "Liverpool Football Club",
+    "country": "Inglaterra",
+    "stadium": "Anfield"
+  },
+  {
+    "id": 8,
+    "name": "Fußball-Club Bayern München",
+    "country": "Alemanha",
+    "stadium": "Allianz Arena"
+  },
+  {
+    "id": 9,
+    "name": "Juventus Football Club",
+    "country": "Itália",
+    "stadium": "Allianz Stadium"
+  },
+  {
+    "id": 10,
+    "name": "Paris Saint-Germain Football Club",
+    "country": "França",
+    "stadium": "Parc des Princes"
+  }
+]

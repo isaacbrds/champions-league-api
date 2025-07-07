@@ -1,5 +1,5 @@
 import PlayerModel from "../models/player-model";
-import { findAllPlayers, findPlayer, insertPlayer } from "../repositories/players-repository";
+import { deletePlayer, findAllPlayers, findPlayer, insertPlayer, updatePlayer } from "../repositories/players-repository";
 import * as HttpResponse from "../utils/http-helper"
 
 export const getPlayersService = async()=>{
@@ -32,5 +32,30 @@ export const insertPlayerService = async(data: PlayerModel) => {
   }else{
     response = await HttpResponse.badRequest();
   }
+  return response;
+}
+
+export const deletePlayerService = async(id: number) => {
+  let player = await deletePlayer(id);
+  let response = null;
+  
+  if(player !== null){
+    response = await HttpResponse.noContent();
+  }else{
+    response = await HttpResponse.badRequest();
+  }
+
+  return response;
+}
+
+export const updatePlayerService = async(id: number, player: PlayerModel) => {
+  let response = await updatePlayer(id, player);
+  
+  if( response ){
+    response = await HttpResponse.ok({ message: "Player updated succeful" });
+  }else{
+    response = await HttpResponse.badRequest();
+  }
+
   return response;
 }
